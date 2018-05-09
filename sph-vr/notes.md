@@ -20,6 +20,8 @@ The code lives in the "sph-viz" branch on my fork of yt: https://github.com/ngol
 
 I'm going to try to get that branch moved into the main yt repo to make code review easier.
 
+You might also try running the gizmo SPH code (http://www.tapir.caltech.edu/~phopkins/Site/GIZMO.html) just a test problem or two, and then visualize the results using yt (yt-project.org).
+
 Project deliverables:
 
 Toy python volume renderer. Not expected to be fast but will allow easy prototyping and exploring different algorithms.
