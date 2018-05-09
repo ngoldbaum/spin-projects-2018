@@ -22,7 +22,57 @@ I'm going to try to get that branch moved into the main yt repo to make code rev
 
 You might also try running the gizmo SPH code (http://www.tapir.caltech.edu/~phopkins/Site/GIZMO.html) just a test problem or two, and then visualize the results using yt (yt-project.org).
 
-Project deliverables:
+# Cython tutorial:
+
+https://github.com/kwmsmith/scipy-2017-cython-tutorial
+
+# Intermediate Python Tutorials:
+
+Building python APIs using the Python data model:
+
+https://www.youtube.com/watch?v=k55d3ZUF3ZQ&t
+
+Building a full-fledged application:
+
+https://www.youtube.com/watch?v=SUt3wT43AeM&t
+
+NumPy, SciPy, matplotlib tutorials:
+
+http://www.scipy-lectures.org/
+
+# Prep problem:
+
+I'd like you write a function `splat` that produces splatted visualization of a particle distribution. This is the simplest way to visualize a particle distribution. The resulting image should be filled with values that are either zero or one: zero if the pixel does not contain any particles and one if the pixel does contain a particle.
+
+The function should take a numpy array of particle positions, the coordinates of the bottom left and top right corner of the image, and the resolution of the image. Here's one way to set things up:
+
+```python
+import numpy as np
+
+num_particles = 1000
+
+# px and py contains randomly generated values between 0 and 1
+px = np.random.random(num_particles)
+py = np.random.random(num_particles)
+
+bottom_left = [0, 0]
+top_right = [1, 1]
+
+resolution = (1024, 1024)
+
+image = splat(px, py, left_corner, right_corner, resolution)
+
+# basic tests
+assert image.shape == resolution
+assert image.sum() <= num_particles
+
+```
+
+Your job is to write the `splat` function. First I'd suggest writing it in pure python. Once you feel like you have a good solution you should try speeding it up using cython. It will be easiest to initially write the `splat` function in a Jupyter notebook. Once you have that working I can help you convert the notebook into a proper python package and handle compiling using a `setup.py` file. Don't worry if you don't know what that means, I will teach you :)
+
+I'd also like you to think about how you might test the `splat` function. Testing is very important for ensuring that code is correct and stays correct even while it gets modified.
+
+# Project deliverables:
 
 Toy python volume renderer. Not expected to be fast but will allow easy prototyping and exploring different algorithms.
 
