@@ -5,6 +5,7 @@ Make it possible to volume render SPH data in yt.
 Background on SPH formalism and visualization:
 
 * The paper describing the SPLASH visualization software (http://users.monash.edu.au/~dprice/splash/): https://doi.org/10.1071/AS07022
+* A more pedagogical review article: https://www.annualreviews.org/doi/abs/10.1146/annurev-astro-081309-130914
 * "Smoothed Particle Hydrodynamics and Magnetohydroynamics" by Dan Price: https://arxiv.org/abs/1012.1885 (in particular Sections 1, 2, and 4)
 * Review: Kd-tree Traversal Algorithms for Ray Tracing. See http://onlinelibrary.wiley.com/doi/10.1111/j.1467-8659.2010.01844.x/pdf
 * cykdtree, the cython KDTree library by Meagan Lang we've been using for this project: https://github.com/cykdtree/cykdtree
